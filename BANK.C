@@ -8,9 +8,9 @@
 time_t t;   //ttt
 int x[20], y[20];
 char a, ch, cpin[22], cpin1[22], username[] = "team5", tusername[22];
-int p, u, i = 0, j, J, in, I[22] = {0}, X, L = 0, cibil_score[10] = {700}; // i is for new acc counter and I[] is for transection counter p is independent
+int p, u, i = 0, j, J, in, I[22] = {0}, X, L = 0; // i is for new acc counter and I[] is for transection counter p is independent
 int temp_acc_number;
-long int pin;
+long int pin, cibil_score[10] = {700};
 
 struct tran
 {
@@ -418,7 +418,7 @@ udone:
   get(5);
   printf("6] address:- %s\n\n\n", m[in].address);
   printf("balance:- %lld\n\n", m[in].acc_balance);
-  printf("cibil score:- %d\n\n", m[in].score);
+  printf("cibil score:- %ld\n\n", m[in].score);
   printf("type of account:- ");
   switch (m[in].acc_type)
   {
