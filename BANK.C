@@ -23,7 +23,7 @@ struct tran h[11][22];
 struct cust
 {
   int acc_date[5], dob[5], acc_type;
-  char name[55], pan[22], pin1, address[111],aadhar[12], phone_number[10];
+  char name[55], pan[22], pin1, address[111],aadhar[13], phone_number[12];
   long long int  acc_balance;
   int b, acc_number;
   long int score;
@@ -679,7 +679,7 @@ void blank(u)
 
 void acc_update()
 {
-  j = i;
+  p = i;
   i = in;
   switch (a)
   {
@@ -727,16 +727,16 @@ void acc_update()
 
     break;
   }
-  i = j;
+  i = p;
   clrscr();
 }
 
 void aadhar_number()
 {
-  set(2);
+  
   printf("3] aadhar no.:- ");
 
-  get(0);
+
 
   j = 0;    // aadhar
   while (1) // this is for no alphabates
@@ -756,20 +756,17 @@ void aadhar_number()
 
     if (ch >= '0' && ch <= '9')
     {
-      cpin[j] = ch;
+      m[i].aadhar[j]= ch;
       printf("%c", ch);
       j++;
     }
   }
-  cpin[j]='\0';
-  for(j=0;j<11;j++)
- {
-  m[i].aadhar[j]=cpin1[j];
- }
+    
 if (ch == 27)
 {
   home();
 }
+m[i].aadhar[j]='\0';
 }
   
 void phone_number()
@@ -799,23 +796,19 @@ void phone_number()
       continue;
     }
 
-    if (ch >= '0' && ch <= '9')
+    if (ch >= 48 && ch <= 57)
     {
-      cpin1[j] = ch;
+     m[i].phone_number[j] = ch;
       printf("%c", ch);
       j++;
     }
   }
-  cpin1[j]='\0';
- for(j=0;j<11;j++)
- {
-  m[i].phone_number[j]=cpin1[j];
- }
+
  if (ch == 27 )
  {
   home();
  }
- 
+    m[i].phone_number[j]='\0';
 
 }
 
